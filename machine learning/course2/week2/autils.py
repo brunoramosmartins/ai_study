@@ -8,7 +8,6 @@ from tensorflow.keras.activations import linear, relu, sigmoid
 dlc = dict(dlblue = '#0096ff', dlorange = '#FF9300', dldarkred='#C00000', dlmagenta='#FF40FF', dlpurple='#7030A0', dldarkblue =  '#0D5BDC', dlmedblue='#4285F4')
 dlblue = '#0096ff'; dlorange = '#FF9300'; dldarkred='#C00000'; dlmagenta='#FF40FF'; dlpurple='#7030A0'; dldarkblue =  '#0D5BDC'; dlmedblue='#4285F4'
 dlcolors = [dlblue, dlorange, dldarkred, dlmagenta, dlpurple]
-plt.style.use('./deeplearning.mplstyle')
 
 
 def load_data():
@@ -54,7 +53,7 @@ def plt_ex1():
     fig.tight_layout(pad=0.1)
     plt.show()
     return(X,y)
- 
+
 def plt_ex2():
     X = np.linspace(0,2*np.pi, 100)
     y = np.cos(X)+1
@@ -115,13 +114,13 @@ def plt_act1(X,y,z,a):
 
 
 def plt_add_notation(ax):
-    ax[1].annotate(text = "matches\n here", xy =(1.5,1.0), 
+    ax[1].annotate(text = "matches\n here", xy =(1.5,1.0),
                    xytext = (0.1,-1.5), fontsize=9,
                   arrowprops=dict(facecolor=dlc["dlpurple"],width=2, headwidth=8))
-    ax[1].annotate(text = "but not\n here", xy =(5,-2.5), 
+    ax[1].annotate(text = "but not\n here", xy =(5,-2.5),
                    xytext = (1,-3), fontsize=9,
                   arrowprops=dict(facecolor=dlc["dlpurple"],width=2, headwidth=8))
-    ax[2].annotate(text = "ReLu\n 'off'", xy =(2.6,0), 
+    ax[2].annotate(text = "ReLu\n 'off'", xy =(2.6,0),
                    xytext = (0.1,0.1), fontsize=9,
                   arrowprops=dict(facecolor=dlc["dlpurple"],width=2, headwidth=8))
 
