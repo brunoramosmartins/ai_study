@@ -3,7 +3,7 @@ from collections import defaultdict
 import csv
 import numpy as np
 from numpy import genfromtxt
-import pickle5 as pickle
+import pickle
 import tabulate
 
 
@@ -44,7 +44,7 @@ def pprint_train(x_train, features, vs, u_s, maxcount=5, user=True):
         flist = [".0f", ".0f", ".1f",
                  ".1f", ".1f", ".1f", ".1f", ".1f", ".1f", ".1f", ".1f", ".1f", ".1f", ".1f", ".1f", ".1f", ".1f"]
     else:
-        flist = [".0f", ".0f", ".1f", 
+        flist = [".0f", ".0f", ".1f",
                  ".0f", ".0f", ".0f", ".0f", ".0f", ".0f", ".0f", ".0f", ".0f", ".0f", ".0f", ".0f", ".0f", ".0f"]
 
     head = features[:vs]
@@ -77,7 +77,7 @@ def split_str(ifeatures, smax):
                 s = s[:mid] + " " + s[mid:]
         ofeatures.append(s)
     return ofeatures
-    
+
 
 def print_pred_movies(y_p, item, movie_dict, maxcount=10):
     """ print results of prediction of a new user. inputs are expected to be in
@@ -118,7 +118,7 @@ def predict_uservec(user_vecs, item_vecs, model, u_s, i_s, scaler):
     sorted_items = item_vecs[sorted_index]
     sorted_user  = user_vecs[sorted_index]
     return(sorted_index, sorted_ypu, sorted_items, sorted_user)
-                
+
 def get_user_vecs(user_id, user_train, item_vecs, user_to_genre):
     """ given a user_id, return:
         user train/predict matrix to match the size of item_vecs
@@ -175,7 +175,7 @@ def print_existing_user(y_p, y, user, items, ivs, uvs, movie_dict, maxcount=10):
             genre_ratings = user[i, uvs + offsets]
             disp.append([y_p[i, 0], y[i, 0],
                          user[i, 0].astype(int),      # userid
-                         np.array2string(genre_ratings, 
+                         np.array2string(genre_ratings,
                                          formatter={'float_kind':lambda x: "%.1f" % x},
                                          separator=',', suppress_small=True),
                          items[i, 2].astype(float),    # movie average rating
